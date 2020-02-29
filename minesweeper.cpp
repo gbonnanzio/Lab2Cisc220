@@ -2,7 +2,7 @@
  * minesweeper.cpp
  *
  *  Geoffrey Bonnanzio
- *  Partner: Nick Samulewicz
+ *  Nick Samulewicz
  *  Due 3/1/2020
  *
  */
@@ -12,6 +12,10 @@
 #include <stdlib.h>
 using namespace std;
 
+
+int bean(){
+	return 5;
+}
 
 
 
