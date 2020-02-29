@@ -13,9 +13,6 @@
 using namespace std;
 
 
-int bean(){
-	return 5;
-}
 
 
 
