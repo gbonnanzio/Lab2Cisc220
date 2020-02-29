@@ -10,7 +10,7 @@
 #include <stdlib.h>
 
 using namespace std;
-//
+//falbf
 
 char** makeVisibleBoard(int size){
 	char **ptrToCharBoard;
