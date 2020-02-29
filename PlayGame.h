@@ -9,7 +9,9 @@
 #ifndef PLAYGAME_H_
 #define PLAYGAME_H_
 
-void makeVisibleBoard(int size);
+char** makeVisibleBoard(int size);
+
+
 
 bool chooseSquare(int** intmat, char** charmat, int size);
 

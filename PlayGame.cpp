@@ -12,14 +12,51 @@
 using namespace std;
 
 
+<<<<<<< HEAD
 void makeVisibleBoard(int size){
 	//new int* intmat[size][size] = '-';
 	return;
+=======
+char** makeVisibleBoard(int size){
+	char **ptrToCharBoard;
+		ptrToCharBoard = new char*[size];
+		for(int i = 0; i<size; i++){
+			ptrToCharBoard[i] = new char[size];
+			for(int j = 0; j<size; j++){
+				ptrToCharBoard[i][j] = '-';
+			}
+		}
+		return ptrToCharBoard;
+>>>>>>> branch 'master' of https://github.com/gbonnanzio/Lab2Cisc220
 }
 
 
 
-
+void printVisible(char **charmat, int size){
+	/* Function takes a pointer to a 2D array of integers
+		 * and the size of the square 2D array and
+		 * prints out the board with indices around the edges.
+		 * Prints a space instead of a 0, when a 0 appears.
+		 * Returns nothing.
+		 */
+	cout << "*" << "\t";
+	for(int i = 0; i<size; i++){
+		cout << i << "\t";
+	}
+	cout << "" << endl;
+	for(int i =0; i<size; i++){
+		cout << i << "\t";
+		for(int j = 0; j<size; j++){
+			if(charmat[i][j] != 0){
+				cout << charmat[i][j] << "\t";
+			}
+			else{
+				cout << "\t";
+			}
+		}
+		cout<< "" << endl;
+	}
+}
 
 
 /*	This function takes as input parameters the pointer to the board matrix of ints, the pointer to the visible
@@ -117,12 +154,22 @@ bool checkForWin(int** intmat, char** charmat, int size){
  * size integer, and removes the matrix from the heap. It returns nothing.
  */
 void removeBoard(int** intmat, int size){
+<<<<<<< HEAD
 	delete intmat;
+=======
+	delete []intmat;
+	return;
+>>>>>>> branch 'master' of https://github.com/gbonnanzio/Lab2Cisc220
 }
 
 /*This function takes as input parameters the pointer to the 2-D character matrix that is the visible board, along with the
  * size integer, and removes the matrix from the heap. It returns nothing.
  */
 void removeVisible(char** charmat, int size){
+<<<<<<< HEAD
 	delete charmat;
+=======
+	delete []charmat;
+	return;
+>>>>>>> branch 'master' of https://github.com/gbonnanzio/Lab2Cisc220
 }
