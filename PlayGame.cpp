@@ -12,9 +12,16 @@
 using namespace std;
 
 
-void makeVisibleBoard(int size){
-	new int* intmat[size][size] = '-';
-	return;
+char** makeVisibleBoard(int size){
+	char **ptrToCharBoard;
+		ptrToCharBoard = new char*[size];
+		for(int i = 0; i<size; i++){
+			ptrToCharBoard[i] = new char[size];
+			for(int j = 0; j<size; j++){
+				ptrToCharBoard[i][j] = '-';
+			}
+		}
+		return ptrToCharBoard;
 }
 
 
@@ -65,7 +72,7 @@ bool addBomb(char** charmat, int size, int* bombsfound){
 	cin >> col;
 	charmat[row][col] = '9';
 	*bombsfound++;
-	if(bombsfound == size + 1){
+	if(*bombsfound == size + 1){
 		return true;
 	}
 	else{
