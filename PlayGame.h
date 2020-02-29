@@ -1,12 +1,21 @@
 /*
  * PlayGame.h
+ *	Geoff B.
+ *	Nick S.
+ *  The functions in this file relate to running the game board
  *
- *  Created on: Feb 29, 2020
- *      Author: gbonn
  */
 
 #ifndef PLAYGAME_H_
 #define PLAYGAME_H_
+
+bool chooseSquare(int* intmat, char* charmat, int size);
+
+bool addBomb(char* charmat, int size, int* bombsfound);
+
+void removeBomb(char* charmat, int size, int* bombsfound);
+
+bool checkForWin(int* intmat, char* charmat, int size);
 
 
 
