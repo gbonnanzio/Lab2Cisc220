@@ -34,6 +34,7 @@ int main(){
 				testBoard[i][j] = dummyMatrix[i][j];
 			}
 		}
+	//test cases
 	printBoard(testBoard,length);
 	placeCounts(testBoard, 4);
 	printBoard(testBoard,length);
