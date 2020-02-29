@@ -17,6 +17,22 @@ using namespace std;
 int main(){
 	//creates a random seed
 	srand(time(NULL));
+	int length = 3;
+	getSize(length);
+	int **testBoard = makeBoard(3);
+	for(int i =0; i<3; i++){
+		for(int j = 0; j<3; j++){
+			cout<<testBoard[i][j];
+		}
+		cout << "" <<endl;
+	}
+	int dummyMatrix[3][3] = {{0,1,2},{3,0,5},{6,7,0}};
+		for(int i =0; i<3; i++){
+			for(int j =0; j<3; j++ ){
+				testBoard[i][j] = dummyMatrix[i][j];
+			}
+		}
+	printBoard(testBoard,3);
 
 	return 0;
 }
