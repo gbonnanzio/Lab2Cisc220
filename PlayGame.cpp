@@ -44,7 +44,7 @@ bool chooseSquare(int** intmat, char** charmat, int size){
  *  to size + 1, false otherwise
  *  this function is allowing the user to choose a square where they think a bomb is and mark it as bomb in
  *  the visible matrix
- *  '9' denotes a
+ *  '9' denotes a bomb
  */
 bool addBomb(char** charmat, int size, int* bombsfound){
 	int col;
@@ -54,8 +54,62 @@ bool addBomb(char** charmat, int size, int* bombsfound){
 	cout << "Add Bomb: Choose Square y:" << endl;
 	cin >> col;
 	charmat[row][col] = '9';
-	return true;
-
-
+	*bombsfound++;
+	if(bombsfound == size + 1){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
+
+/*	This function takes as input parameters the pointer to the visible matrix of chars, the size int, and a pointer
+ *	to the number of bombs found.
+ *	this function is allowing the user to choose a square where they previously placed a bomb and unmark the square.
+ *
+ */
+void removeBomb(char** charmat, int size, int* bombsfound){
+	int col;
+	int row;
+	cout << "Remove Bomb: Choose Square x:" << endl;
+	cin >> row;
+	cout << "Remove Bomb: Choose Square y:" << endl;
+	cin >> col;
+	if(charmat[row][col] == '9'){
+		charmat[row][col] = '-';
+		*bombsfound--;
+	}
+	return;
+}
+
+
+/*	this function takes as input the pointer to the board matrix of integers, the pointer to the visible matrix
+ * 	of characters, and the int size
+ * 	It checks to make sure that each bomb in the board matrix has been marked as a bomb on the visible
+ * 	matrix. It returns a boolean value - true if all the bombs have been found, and false otherwise
+ */
+bool checkForWin(int** intmat, char** charmat, int size){
+	for(int i = 0; i < size; i++){
+		for(int j = 0;j < size; j++){
+			if(intmat[j][i] == 9){
+				if(charmat[j][i] != '9'){
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
+
+
+void removeBoard(int** intmat, int size){
+	delete intmat;
+	return;
+}
+
+
+void removeVisible(char** charmat, int size){
+	delete charmat;
+	return;
+}
