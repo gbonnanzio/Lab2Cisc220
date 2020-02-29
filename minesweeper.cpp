@@ -12,7 +12,10 @@
 #include <stdlib.h>
 using namespace std;
 
-
+//main function to run program
+int main(){
+	return 0;
+}
 
 
 
