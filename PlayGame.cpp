@@ -20,10 +20,10 @@ bool chooseSquare(int** intmat, char** charmat, int size){
 	cin >> x;
 	cout << "Choose square y;" >> endl;
 	cin >> y;
-	char c = intmat[y][x];
-	charmat[y][x] = c;
-	if(x || y >= size){
-		cout << "Invalid square. Choose again" << endl;
+	char c = intmat[x][y];
+	charmat[x][y] = c;
+	if(x >= size || y >= size){
+		cout << "Invalid square. Choose again:" << endl;
 		chooseSquare(intmat, charmat, size);
 	}
 	if( c == '9'){
@@ -34,7 +34,22 @@ bool chooseSquare(int** intmat, char** charmat, int size){
 	}
 }
 
+/* This function takes as input parameters the pointer to the visible matrix of chars, the size int, and a pointer
+ *  to the number of bombs found. It returns a boolean value (true if the number of bombs found is equal
+ *  to size + 1, false otherwise
+ *  this function is allowing the user to choose a square where they think a bomb is and mark it as bomb in
+ *  the visible matrix
+ *  '9' denotes a
+ */
 bool addBomb(char** charmat, int size, int* bombsfound){
+	int col;
+	int row;
+	cout << "Add Bomb: Choose Square x:" << endl;
+	cin >> row;
+	cout << "Add Bomb: Choose Square y:" << endl;
+	cin >> col;
+	charmat[row][col] = '9';
+
 
 }
 
