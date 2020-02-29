@@ -17,7 +17,7 @@ void removeBomb(char* charmat, int size, int* bombsfound);
 
 bool checkForWin(int* intmat, char* charmat, int size);
 
-
+//
 
 
 
