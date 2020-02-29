@@ -1,8 +1,10 @@
 /*
  * makeBoard.cpp
  *
- *  Created on: Feb 29, 2020
- *      Author: gbonn
+ *  Geoffrey Bonnanzio
+ *  Partner: Nick Samulewicz
+ *  The functions in this file relate to creating the game board and
+ *  printing it to the screen
  */
 
 #include <iostream>
@@ -10,12 +12,12 @@
 #include <stdlib.h>
 using namespace std;
 
-//Header file
+//Header file for function definitions
 #include "makeBoard.h"
 
 
-int test(int a){
-	return a+1;
+void getSize(int &boardSize){
+	boardSize = rand()%14 + 7; //generates a random number between 7 and 20;
 }
 
 

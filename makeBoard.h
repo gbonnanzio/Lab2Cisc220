@@ -1,14 +1,15 @@
 /*
- * makeBoard.h
+ * Geoffrey Bonnanzio
+ * Partner: Nick Samulewicz
  *
- *  Created on: Feb 29, 2020
- *      Author: gbonn
+ * Function declarations for makeBoard.cpp
+ *
  */
 
 #ifndef MAKEBOARD_H_
 #define MAKEBOARD_H_
 
-int test(int a);
+void getSize(int &boardSize);
 
 
 

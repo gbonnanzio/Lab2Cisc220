@@ -15,7 +15,9 @@ using namespace std;
 
 //main function to run program
 int main(){
-	cout << test(1) <<endl;
+	//creates a random seed
+	srand(time(NULL));
+
 	return 0;
 }
 
