@@ -2,7 +2,7 @@
  * minesweeper.cpp
  *
  *  Geoffrey Bonnanzio
- *  Partner: Nick Samulewicz
+ *  Nick Samulewicz
  *  Due 3/1/2020
  *
  */
@@ -18,6 +18,7 @@ int main(){
 	cout << test(1) <<endl;
 	return 0;
 }
+
 
 
 
