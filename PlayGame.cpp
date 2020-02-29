@@ -5,6 +5,8 @@
  *  The functions in this file relate to running the game board
 */
 #include "PlayGame.h"
+#include <stdio.h>
+using namespace std;
 
 
 /*	This function takes as input parameters the pointer to the board matrix of ints, the pointer to the visible
