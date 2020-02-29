@@ -18,6 +18,7 @@ using namespace std;
 *	respectively) and then sets the visible matrix at that square to be the value in the board matrix.
 *	This function returns a boolean - false if the square chosen was a bomb, and true otherwise
 */
+
 bool chooseSquare(int** intmat, char** charmat, int size){
 	int x;
 	int y;
@@ -55,7 +56,7 @@ bool addBomb(char** charmat, int size, int* bombsfound){
 	cin >> col;
 	charmat[row][col] = '9';
 	*bombsfound++;
-	if(bombsfound == size + 1){
+	if(*bombsfound == size + 1){
 		return true;
 	}
 	else{
@@ -80,7 +81,6 @@ void removeBomb(char** charmat, int size, int* bombsfound){
 		charmat[row][col] = '-';
 		*bombsfound--;
 	}
-	return;
 }
 
 
@@ -108,7 +108,6 @@ bool checkForWin(int** intmat, char** charmat, int size){
  */
 void removeBoard(int** intmat, int size){
 	delete intmat;
-	return;
 }
 
 /*This function takes as input parameters the pointer to the 2-D character matrix that is the visible board, along with the
@@ -116,5 +115,4 @@ void removeBoard(int** intmat, int size){
  */
 void removeVisible(char** charmat, int size){
 	delete charmat;
-	return;
 }

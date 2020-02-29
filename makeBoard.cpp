@@ -77,8 +77,8 @@ void placeBombs(int **intBoard, int size){
 	int xIndex = rand()%size;
 	int yIndex = rand()%size;
 	while(intBoard[xIndex][yIndex] == 9){
-		int xIndex = rand()%size;
-		int yIndex = rand()%size;
+		xIndex = rand()%size;
+		yIndex = rand()%size;
 	}
 	intBoard[xIndex][yIndex] = 9;
 }
@@ -93,29 +93,31 @@ void placeCounts(int **intBoard, int size){
 	int bombs = 0;
 	for(int i = 0; i<size; i++){
 		for(int j =0; j<size; j++){
+			bombs =0;
 			if(intBoard[i][j]!=9){
+				//first row
 				if(i == 0){
 					//top left corner
 					if(j == 0){
-						if(intBoard[i][1]==9){
+						if(intBoard[i][j+1]==9){
 							bombs++;
 						}
-						if(intBoard[1][0]==9){
+						if(intBoard[i+1][j]==9){
 							bombs++;
 						}
-						if(intBoard[1][1]==9){
+						if(intBoard[i+1][j+1]==9){
 							bombs++;
 						}
 					}
 					//top right corner
 					else if(j==size-1){
-						if(intBoard[i][size-2]==9){
+						if(intBoard[i][j-1]==9){
 							bombs++;
 						}
-						if(intBoard[1][size-2]==9){
+						if(intBoard[i+1][j-1]==9){
 							bombs++;
 						}
-						if(intBoard[1][size-1]==9){
+						if(intBoard[i+1][j]==9){
 							bombs++;
 						}
 					}
@@ -127,13 +129,14 @@ void placeCounts(int **intBoard, int size){
 						if(intBoard[i][j+1]==9){
 							bombs++;
 						}
-						for(int k = j-1; k<=j+1; k++){
-							if(intBoard[i+1][k] == 9){
+						for(int b = j-1; b<=j+1; b++){
+							if(intBoard[i+1][b] == 9){
 								bombs++;
 							}
 						}
 					}
 				}
+				//bottom row
 				else if(i == size -1){
 					//bottom left corner
 					if(j == 0){
@@ -167,8 +170,8 @@ void placeCounts(int **intBoard, int size){
 						if(intBoard[i][j+1]==9){
 							bombs++;
 						}
-						for(int k = j-1; k<=j+1; k++){
-							if(intBoard[i-1][k] == 9){
+						for(int b = j-1; b<=j+1; b++){
+							if(intBoard[i-1][b] == 9){
 								bombs++;
 							}
 						}
@@ -183,8 +186,8 @@ void placeCounts(int **intBoard, int size){
 						if(intBoard[i+1][j]==9){
 							bombs++;
 						}
-						for(int k = i-1; k<=i+1; k++){
-							if(intBoard[k][j+1] == 9){
+						for(int a = i-1; a<=i+1; a++){
+							if(intBoard[a][j+1] == 9){
 								bombs++;
 							}
 						}
@@ -197,8 +200,8 @@ void placeCounts(int **intBoard, int size){
 						if(intBoard[i+1][j]==9){
 							bombs++;
 						}
-						for(int k = i-1; k<=i+1; k++){
-							if(intBoard[k][j-1] == 9){
+						for(int a = i-1; a<=i+1; a++){
+							if(intBoard[a][j-1] == 9){
 								bombs++;
 							}
 						}
