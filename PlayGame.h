@@ -9,16 +9,16 @@
 #ifndef PLAYGAME_H_
 #define PLAYGAME_H_
 
-bool chooseSquare(int* intmat, char* charmat, int size);
+bool chooseSquare(int** intmat, char** charmat, int size);
 
-bool addBomb(char* charmat, int size, int* bombsfound);
+bool addBomb(char** charmat, int size, int* bombsfound);
 
-void removeBomb(char* charmat, int size, int* bombsfound);
+void removeBomb(char** charmat, int size, int* bombsfound);
 
-bool checkForWin(int* intmat, char* charmat, int size);
+bool checkForWin(int** intmat, char** charmat, int size);
 
-//
+void removeBoard(int** intmat, int size);
 
-
+void removeVisible(char** charmat, int size);
 
 #endif /* PLAYGAME_H_ */
