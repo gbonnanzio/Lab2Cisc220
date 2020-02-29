@@ -12,6 +12,16 @@
 using namespace std;
 
 
+void makeVisibleBoard(int size){
+	new int* intmat[size][size] = '-';
+	return;
+}
+
+
+
+
+
+
 /*	This function takes as input parameters the pointer to the board matrix of ints, the pointer to the visible
 *	matrix of chars, and the size.
 *	It uses cout and cin to allow the user to choose a square (the x and the y position on the matrix
