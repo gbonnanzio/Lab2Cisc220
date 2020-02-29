@@ -28,7 +28,7 @@ int main(){
 		}
 		cout << "" <<endl;
 	}
-	int dummyMatrix[length][length] = {{1,1,1,1},{1,1,1,1},{1,1,1,1},{1,1,1,1}};
+	int dummyMatrix[length][length] = {{1,9,1,9},{1,9,1,1},{9,1,1,9},{1,1,1,9}};
 		for(int i =0; i<length; i++){
 			for(int j =0; j<length; j++ ){
 				testBoard[i][j] = dummyMatrix[i][j];

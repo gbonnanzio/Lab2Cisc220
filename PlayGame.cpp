@@ -13,7 +13,7 @@ using namespace std;
 
 
 void makeVisibleBoard(int size){
-	new int* intmat[size][size] = '-';
+	//new int* intmat[size][size] = '-';
 	return;
 }
 

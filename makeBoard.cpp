@@ -125,13 +125,16 @@ void placeCounts(int **intBoard, int size){
 					else{
 						if(intBoard[i][j-1]==9){
 							bombs++;
+							cout<<"test 4"<<endl;
 						}
 						if(intBoard[i][j+1]==9){
 							bombs++;
+							cout<<"test 5"<<endl;
 						}
 						for(int b = j-1; b<=j+1; b++){
 							if(intBoard[i+1][b] == 9){
 								bombs++;
+								cout<<"test 6"<<endl;
 							}
 						}
 					}
@@ -209,7 +212,7 @@ void placeCounts(int **intBoard, int size){
 					else{
 						//center pieces
 						for(int a = i-1; a<=i+1; a++){
-							for(int b = j-1; b<=j+1; j++){
+							for(int b = j-1; b<=j+1; b++){
 								if(!(a == i && b == j)){
 									if(intBoard[a][b]==9){
 										bombs++;
