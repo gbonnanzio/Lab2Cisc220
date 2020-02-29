@@ -6,6 +6,9 @@
 */
 #include "PlayGame.h"
 #include <stdio.h>
+#include <iostream>
+#include <stdlib.h>
+
 using namespace std;
 
 
@@ -18,9 +21,9 @@ using namespace std;
 bool chooseSquare(int** intmat, char** charmat, int size){
 	int x;
 	int y;
-	cout << "Choose square x:" >> endl;
+	cout << "Choose square x:" << endl;
 	cin >> x;
-	cout << "Choose square y;" >> endl;
+	cout << "Choose square y;" << endl;
 	cin >> y;
 	char c = intmat[x][y];
 	charmat[x][y] = c;
