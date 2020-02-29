@@ -67,5 +67,161 @@ void printBoard(int **intBoard, int size){
 	}
 }
 
+void placeBombs(int **intBoard, int size){
+	/* Function takes a pointer to the board (2D array
+	 * of integers, and the size of the board
+	 * Places a bomb randomly on the board and checks
+	 * whether a bomb is already there
+	 * returns nothing.
+	 */
+	int xIndex = rand()%size;
+	int yIndex = rand()%size;
+	while(intBoard[xIndex][yIndex] == 9){
+		int xIndex = rand()%size;
+		int yIndex = rand()%size;
+	}
+	intBoard[xIndex][yIndex] = 9;
+}
+
+void placeCounts(int **intBoard, int size){
+	/* Function takes a pointer to the board (2D array
+	 * of integers, and the size of the board
+	 * Counts how many bombs (the number 9) are adjacent
+	 * to each spot on the board
+	 * returns nothing
+	 */
+	int bombs = 0;
+	for(int i = 0; i<size; i++){
+		for(int j =0; j<size; j++){
+			if(intBoard[i][j]!=9){
+				if(i == 0){
+					//top left corner
+					if(j == 0){
+						if(intBoard[i][1]==9){
+							bombs++;
+						}
+						if(intBoard[1][0]==9){
+							bombs++;
+						}
+						if(intBoard[1][1]==9){
+							bombs++;
+						}
+					}
+					//top right corner
+					else if(j==size-1){
+						if(intBoard[i][size-2]==9){
+							bombs++;
+						}
+						if(intBoard[1][size-2]==9){
+							bombs++;
+						}
+						if(intBoard[1][size-1]==9){
+							bombs++;
+						}
+					}
+					//top row (not corners)
+					else{
+						if(intBoard[i][j-1]==9){
+							bombs++;
+						}
+						if(intBoard[i][j+1]==9){
+							bombs++;
+						}
+						for(int k = j-1; k<=j+1; k++){
+							if(intBoard[i+1][k] == 9){
+								bombs++;
+							}
+						}
+					}
+				}
+				else if(i == size -1){
+					//bottom left corner
+					if(j == 0){
+						if(intBoard[i-1][j]==9){
+							bombs++;
+						}
+						if(intBoard[i-1][j+1]==9){
+							bombs++;
+						}
+						if(intBoard[i][j+1]==9){
+							bombs++;
+						}
+					}
+					//bottom right corner
+					else if(j==size-1){
+						if(intBoard[i][j-1]==9){
+							bombs++;
+						}
+						if(intBoard[i-1][j-1]==9){
+							bombs++;
+						}
+						if(intBoard[i-1][j]==9){
+							bombs++;
+						}
+					}
+					//bottom row (not corners)
+					else{
+						if(intBoard[i][j-1]==9){
+							bombs++;
+						}
+						if(intBoard[i][j+1]==9){
+							bombs++;
+						}
+						for(int k = j-1; k<=j+1; k++){
+							if(intBoard[i-1][k] == 9){
+								bombs++;
+							}
+						}
+					}
+				}
+				else{
+					if(j == 0){
+						//left edge (not corners)
+						if(intBoard[i-1][j]==9){
+							bombs++;
+						}
+						if(intBoard[i+1][j]==9){
+							bombs++;
+						}
+						for(int k = i-1; k<=i+1; k++){
+							if(intBoard[k][j+1] == 9){
+								bombs++;
+							}
+						}
+					}
+					else if(j == size -1){
+						//right edge (not corners)
+						if(intBoard[i-1][j]==9){
+							bombs++;
+						}
+						if(intBoard[i+1][j]==9){
+							bombs++;
+						}
+						for(int k = i-1; k<=i+1; k++){
+							if(intBoard[k][j-1] == 9){
+								bombs++;
+							}
+						}
+					}
+					else{
+						//center pieces
+						for(int a = i-1; a<=i+1; a++){
+							for(int b = j-1; b<=j+1; j++){
+								if(!(a == i && b == j)){
+									if(intBoard[a][b]==9){
+										bombs++;
+									}
+								}
+							}
+						}
+					}
+				}
+			intBoard[i][j]=bombs;
+			}
+		}
+	}
+}
+
+
 
 

@@ -17,24 +17,26 @@ using namespace std;
 int main(){
 	//creates a random seed
 	srand(time(NULL));
-	int length = 3;
-	getSize(length);
-	int **testBoard = makeBoard(3);
-	for(int i =0; i<3; i++){
-		for(int j = 0; j<3; j++){
+
+	//create a new board
+	int length = 4;
+	//getSize(length);
+	int **testBoard = makeBoard(4);
+	for(int i =0; i<length; i++){
+		for(int j = 0; j<length; j++){
 			cout<<testBoard[i][j];
 		}
 		cout << "" <<endl;
 	}
-	int dummyMatrix[3][3] = {{0,1,2},{3,0,5},{6,7,0}};
-		for(int i =0; i<3; i++){
-			for(int j =0; j<3; j++ ){
+	int dummyMatrix[length][length] = {{9,1,2,3},{6,3,0,5},{9,6,7,0},{9,6,7,0}};
+		for(int i =0; i<length; i++){
+			for(int j =0; j<length; j++ ){
 				testBoard[i][j] = dummyMatrix[i][j];
 			}
 		}
-	printBoard(testBoard,3);
+	printBoard(testBoard,length);
 
-	return 0; //test
+	return 0;
 }
 
 

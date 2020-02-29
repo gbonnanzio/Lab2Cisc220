@@ -13,6 +13,7 @@
 void getSize(int &boardSize);
 int** makeBoard(int size);
 void printBoard(int **intBoard, int size);
-
+void placeBombs(int **intBoard, int size);
+void placeCounts(int **intBoard, int size);
 
 #endif /* MAKEBOARD_H_ */
