@@ -103,12 +103,17 @@ bool checkForWin(int** intmat, char** charmat, int size){
 }
 
 
+/*This function takes as input parameters the pointer to the 2-D integer matrix that is the board, along with the
+ * size integer, and removes the matrix from the heap. It returns nothing.
+ */
 void removeBoard(int** intmat, int size){
 	delete intmat;
 	return;
 }
 
-
+/*This function takes as input parameters the pointer to the 2-D character matrix that is the visible board, along with the
+ * size integer, and removes the matrix from the heap. It returns nothing.
+ */
 void removeVisible(char** charmat, int size){
 	delete charmat;
 	return;
