@@ -49,6 +49,7 @@ bool addBomb(char** charmat, int size, int* bombsfound){
 	cout << "Add Bomb: Choose Square y:" << endl;
 	cin >> col;
 	charmat[row][col] = '9';
+	return true;
 
 
 }
