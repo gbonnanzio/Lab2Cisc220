@@ -92,13 +92,15 @@ bool chooseSquare(int** intmat, char** charmat, int size){
 bool addBomb(char** charmat, int size, int* bombsfound){
 	int col;
 	int row;
+	int tempVal = *bombsfound;
 	cout << "Add Bomb: Choose Square x:" << endl;
 	cin >> row;
 	cout << "Add Bomb: Choose Square y:" << endl;
 	cin >> col;
 	charmat[row][col] = '9';
-	*bombsfound++;
-	if(*bombsfound == size + 1){
+	tempVal++;
+	*bombsfound = tempVal;
+	if(tempVal == size + 1){
 		return true;
 	}
 	else{
