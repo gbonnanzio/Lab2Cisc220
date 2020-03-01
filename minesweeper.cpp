@@ -31,6 +31,7 @@ int main() {
 	char **visible = makeVisibleBoard(size);
 
 	/* For testing purposes: */
+	/*
 	printVisible(visible,size);
 	chooseSquare(mat,visible,size);
 	printVisible(visible,size);

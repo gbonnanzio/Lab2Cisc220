@@ -23,7 +23,7 @@ char** makeVisibleBoard(int size){
 }
 
 void printVisible(char **charmat, int size){
-	/* Function takes a pointer to a 2D array of integers
+	/* Function takes a pointer to a 2D array of chars
 		 * and the size of the square 2D array and
 		 * prints out the board with indices around the edges.
 		 * Prints a space instead of a 0, when a 0 appears.
@@ -61,15 +61,16 @@ bool chooseSquare(int** intmat, char** charmat, int size){
 	int y;
 	cout << "Choose square x:" << endl;
 	cin >> x;
-	cout << "Choose square y;" << endl;
+	cout << "Choose square y:" << endl;
 	cin >> y;
-	char c = intmat[x][y];
-	charmat[x][y] = c;
-	if(x >= size || y >= size){
+	if(!(x < size && y < size)){
 		cout << "Invalid square. Choose again:" << endl;
 		chooseSquare(intmat, charmat, size);
 	}
-	if( c == '9'){
+	char *c = new char;
+	itoa(intmat[x][y],c,10);
+	charmat[x][y] = *c;
+	if( *c == '9'){
 		return false;
 	}
 	else{
