@@ -11,7 +11,7 @@
 
 char** makeVisibleBoard(int size);
 
-
+void printVisible(char **charmat, int size);
 
 bool chooseSquare(int** intmat, char** charmat, int size);
 

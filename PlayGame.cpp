@@ -8,9 +8,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
-
 using namespace std;
-//falbf
 
 char** makeVisibleBoard(int size){
 	char **ptrToCharBoard;
@@ -23,8 +21,6 @@ char** makeVisibleBoard(int size){
 		}
 		return ptrToCharBoard;
 }
-
-
 
 void printVisible(char **charmat, int size){
 	/* Function takes a pointer to a 2D array of integers
@@ -59,6 +55,7 @@ void printVisible(char **charmat, int size){
 *	respectively) and then sets the visible matrix at that square to be the value in the board matrix.
 *	This function returns a boolean - false if the square chosen was a bomb, and true otherwise
 */
+
 bool chooseSquare(int** intmat, char** charmat, int size){
 	int x;
 	int y;
@@ -121,7 +118,6 @@ void removeBomb(char** charmat, int size, int* bombsfound){
 		charmat[row][col] = '-';
 		*bombsfound--;
 	}
-	return;
 }
 
 
