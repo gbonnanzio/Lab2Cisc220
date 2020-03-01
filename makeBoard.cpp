@@ -74,13 +74,15 @@ void placeBombs(int **intBoard, int size){
 	 * whether a bomb is already there
 	 * returns nothing.
 	 */
-	int xIndex = rand()%size;
-	int yIndex = rand()%size;
-	while(intBoard[xIndex][yIndex] == 9){
-		xIndex = rand()%size;
-		yIndex = rand()%size;
+	for(int i = 0; i<=size; i++){
+		int xIndex = rand()%size;
+		int yIndex = rand()%size;
+		while(intBoard[xIndex][yIndex] == 9){
+			xIndex = rand()%size;
+			yIndex = rand()%size;
+		}
+		intBoard[xIndex][yIndex] = 9;
 	}
-	intBoard[xIndex][yIndex] = 9;
 }
 
 void placeCounts(int **intBoard, int size){
