@@ -95,8 +95,16 @@ bool addBomb(char** charmat, int size, int* bombsfound){
 	int tempVal = *bombsfound;
 	cout << "Add Bomb: Choose Square x:" << endl;
 	cin >> row;
+	while(row >= size){
+		cout << "Invalid square. Choose again:" << endl;
+		cin >> row;
+		}
 	cout << "Add Bomb: Choose Square y:" << endl;
-	cin >> col;
+		cin >> col;
+		while(col >= size){
+			cout << "Invalid square. Choose again:" << endl;
+			cin >> col;
+		}
 	charmat[row][col] = '9';
 	tempVal++;
 	*bombsfound = tempVal;
