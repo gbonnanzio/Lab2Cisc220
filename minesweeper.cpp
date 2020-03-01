@@ -1,9 +1,9 @@
 /*
- * minesweeper.cpp
- *
+ * 	minesweeper.cpp
+ *	Partners:
  *  Geoffrey Bonnanzio
  *  Nick Samulewicz
- *  Due 3/1/2020
+ *  Due: 3/1/2020
  *
  */
 
