@@ -21,7 +21,7 @@ void getSize(int &boardSize){
 	 * and generates a random number between 7 and 20
 	 * returns nothing.
 	 */
-	boardSize = rand()%14 + 7;
+	boardSize = rand()%1 + 2;
 }
 
 int** makeBoard(int size){
