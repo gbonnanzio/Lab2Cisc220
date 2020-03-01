@@ -127,8 +127,16 @@ void removeBomb(char** charmat, int size, int* bombsfound){
 	int row;
 	cout << "Remove Bomb: Choose Square x:" << endl;
 	cin >> row;
+	while(row >= size){
+		cout << "Invalid square. Choose again:" << endl;
+		cin >> row;
+	}
 	cout << "Remove Bomb: Choose Square y:" << endl;
 	cin >> col;
+	while(col >= size){
+		cout << "Invalid square. Choose again:" << endl;
+		cin >> col;
+	}
 	if(charmat[row][col] == '9'){
 		charmat[row][col] = '-';
 		*bombsfound--;
