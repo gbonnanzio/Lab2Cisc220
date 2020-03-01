@@ -61,11 +61,15 @@ bool chooseSquare(int** intmat, char** charmat, int size){
 	int y;
 	cout << "Choose square x:" << endl;
 	cin >> x;
+	while(x >= size){
+		cout << "Invalid square. Choose again:" << endl;
+		cin >> x;
+	}
 	cout << "Choose square y:" << endl;
 	cin >> y;
-	if(!(x < size && y < size)){
+	while(y >= size){
 		cout << "Invalid square. Choose again:" << endl;
-		chooseSquare(intmat, charmat, size);
+		cin >> y;
 	}
 	char *c = new char;
 	itoa(intmat[x][y],c,10);

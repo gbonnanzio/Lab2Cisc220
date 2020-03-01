@@ -127,16 +127,13 @@ void placeCounts(int **intBoard, int size){
 					else{
 						if(intBoard[i][j-1]==9){
 							bombs++;
-							cout<<"test 4"<<endl;
 						}
 						if(intBoard[i][j+1]==9){
 							bombs++;
-							cout<<"test 5"<<endl;
 						}
 						for(int b = j-1; b<=j+1; b++){
 							if(intBoard[i+1][b] == 9){
 								bombs++;
-								cout<<"test 6"<<endl;
 							}
 						}
 					}
