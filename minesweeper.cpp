@@ -31,7 +31,7 @@ int main() {
 	char **visible = makeVisibleBoard(size);
 
 	/* For testing purposes: */
-	/*
+
 	printVisible(visible,size);
 	chooseSquare(mat,visible,size);
 	printVisible(visible,size);
@@ -40,7 +40,7 @@ int main() {
 	removeBomb(visible, size, &bombsfound);
 	printVisible(visible,size);
 	checkForWin(mat, visible, size);
-	/* End of testing */
+	// End of testing
 
 	char c;
 	bool flag = true;
